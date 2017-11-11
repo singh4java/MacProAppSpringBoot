@@ -1,0 +1,5 @@
+com/javasampleapproach/rabbitmq/consumer/Consumer.class
+com/javasampleapproach/rabbitmq/model/Company.class
+com/javasampleapproach/rabbitmq/model/Product.class
+com/javasampleapproach/rabbitmq/SpringRabbitMqConsumerApplication.class
+com/javasampleapproach/rabbitmq/config/RabbitMqConfig.class

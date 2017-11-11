@@ -14,12 +14,12 @@ import com.javasampleapproach.rabbitmq.model.Product;
 import com.javasampleapproach.rabbitmq.producer.Producer;
 
 @SpringBootApplication
-public class SpringRabbitMqProducerApplication  implements CommandLineRunner{
+public class SpringRabbitMqProducerApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringRabbitMqProducerApplication.class, args);
 	}
-	
+
 	@Autowired
 	Producer producer;
 
@@ -30,17 +30,19 @@ public class SpringRabbitMqProducerApplication  implements CommandLineRunner{
 		 */
 		Product iphone7 = new Product("Iphone 7");
 		Product iPadPro = new Product("IPadPro");
-		
+
 		List<Product> appleProducts = new ArrayList<Product>(Arrays.asList(iphone7, iPadPro));
-		
+
 		Company apple = new Company("Apple", appleProducts);
-		
+
 		iphone7.setCompany(apple);
 		iPadPro.setCompany(apple);
-		
-        /*
-         * send message to RabbitMQ
-         */
-		producer.produce(apple);
+
+		/*
+		 * send message to RabbitMQ
+		 */
+		for (int i = 0; i < 100; i++) {
+			producer.produce(apple);
+		}
 	}
 }
