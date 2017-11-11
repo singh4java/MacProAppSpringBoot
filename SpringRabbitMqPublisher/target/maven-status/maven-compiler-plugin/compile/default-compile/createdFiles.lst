@@ -1,0 +1,3 @@
+com/javasampleapproach/rabbitmq/publisher/Publisher.class
+com/javasampleapproach/rabbitmq/web/WebController.class
+com/javasampleapproach/rabbitmq/SpringRabbitMqPublisherApplication.class

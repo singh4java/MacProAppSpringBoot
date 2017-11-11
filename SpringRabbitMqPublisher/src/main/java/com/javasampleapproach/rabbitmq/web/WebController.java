@@ -9,13 +9,15 @@ import com.javasampleapproach.rabbitmq.publisher.Publisher;
 
 @RestController
 public class WebController {
-	
+
 	@Autowired
 	Publisher publisher;
-	
+
 	@RequestMapping("/send")
-	public String sendMsg(@RequestParam("msg")String msg){
-		publisher.produceMsg(msg);
+	public String sendMsg(@RequestParam("msg") String msg) {
+		for (int i = 0; i < 2000; i++) {
+			publisher.produceMsg(msg);
+		}
 		return "Done";
 	}
 }
